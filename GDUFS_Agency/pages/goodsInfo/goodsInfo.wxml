@@ -1,0 +1,60 @@
+<!--pages/goodsInfo/goodsInfo.wxml-->
+<view class='goods'>
+  <view class='user-info'>
+    <image class='user-img' src='/img/timg.jpg'></image>
+    <view class='user-name'>{{goodsInfo.publishid}}</view>
+    <view class='user-date'> 发布于{{goodsInfo.publishtime}}</view>
+    <button class="takeOrder" bindtap="accept">接单</button>
+  </view>
+
+  <!-- 下划线 -->
+  <view class='link'></view>
+
+  <view class="orderDetail">
+    <text class="detailItem">订单编号:{{goodsInfo.indentid}}\n</text>
+    <text class="detailItem">￥{{goodsInfo.price}}\n</text>
+    <text class="detailItem">代办类型：{{typeArray[goodsInfo.type]['type']}}\n</text>
+    <text class="detailItem">收货地点：{{goodsInfo.address}}\n</text>
+    <text class="detailItem">送达时间：{{goodsInfo.plantime}}\n</text>
+  </view>
+</view>
+
+
+  <view class='orderDescription'>
+  <text>描述</text>
+    <text>
+      {{goodsInfo.description}}
+    </text>
+  </view>
+
+
+<view class='comments'>
+  <view class="liuyan">
+  <text>留言</text>
+  </view>
+
+  <view class='link'></view>
+
+  <view class='comments-info' wx:for="{{commentsArray}}">
+      <image class='user-img' src='/img/timg.jpg'></image>
+      <view>
+        <text class='user-name'>{{item.acceptid}}</text>    
+      </view>
+      <text class='user-comments-content'>{{item.content}}</text>
+  </view>
+
+  <view class='link'></view>
+
+</view>
+
+<view class='footer'>
+  <view class='left'>
+    <image class='img' src='/img/xiaoxi.png'></image>
+    <view>
+    <input class='commentsInput' bindinput="getCommentContent" value="{{commentContent}}"></input>
+  </view>
+  </view>
+  <view class='right'>
+    <button bindtap="commitComment">评论</button>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="weui-form">
+    <!-- <view class="weui-form__control-area"> -->
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell">
+            <view class="weui-cell__hd">
+              <label class="weui-label">金额：</label>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" type="number" pattern="[0-9]*" bindinput="getMoney" value="{{money == 0 ? '' : money}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    <!-- </view> -->
+    <view class="weui-form__opr-area">
+      <button class="saveBtn" bindtap="click" disabled="{{disable}}">充值</button>
+    </view>
+  </view>
+</view>

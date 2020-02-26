@@ -1,0 +1,32 @@
+<!--pages/classInfo/classInfo.wxml-->
+<view>
+<view wx:if="{{agentOrders.length>0}}">
+<view wx:for="{{agentOrders}}">
+<navigator url='/pages/goodsInfo/goodsInfo?id={{item.indentid}}' hover-class="navigator-hover">
+  <view class='goods-card'>
+    <view class='box'>
+      <view class='box1'>
+       <image class='user-img' src='/img/timg.jpg'></image> 
+      </view>
+      <view class='box2'>
+       <text class='goods-title'>{{item.publishid}}</text> 
+       <text class='box3' class='goods-price'>支付费用：￥{{item.price}} </text> 
+      </view>
+       <view class='box3'>
+       <text class='goods-time'>{{item.publishtime}}</text> 
+      </view>             
+    </view>
+    <view class='orderDetail'>
+      <text>订单编号：{{item.indentid}}</text> 
+      <text>收货地点：{{item.address}}</text>
+      <text>送达时间：{{item.plantime}}</text>                 
+    </view>
+    <!-- <text class='goods-miaoshu'>{{item.describle}}</text> -->
+  </view>
+</navigator>
+</view>
+</view>
+<view wx:else>
+  <text class="tips">还没订单哦</text>
+</view>
+</view>

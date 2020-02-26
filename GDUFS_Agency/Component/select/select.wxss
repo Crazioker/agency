@@ -1,0 +1,64 @@
+/* Component/select/select.wxss */
+.com-selectBox{
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 13px;
+}
+.com-sContent{
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e2e2;
+    background: white;
+    font-size: 16px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+.com-sImg{
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 16px;
+    height: 14px;
+    transition: all .3s ease;
+}
+.com-sTxt{
+    border-radius: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding:0 20px 0 6px;
+    font-size: 14px;
+}
+.com-sList{
+    border-radius: 8px;
+    background: white;
+    width: inherit;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    max-height: 140px;
+    overflow: auto;
+}
+.com-sItem{
+    border-radius: 8px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #e2e2e2;
+    padding: 0 6px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.com-sItem:first-child{
+  border-radius: 8px;
+  overflow: hidden;
+  border-top: none;
+}

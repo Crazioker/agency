@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/publish/publish",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/add/add",
+    "pages/mine/mine",
+    "pages/goodsInfo/goodsInfo",
+    "pages/classInfo/classInfo",
+    "Component/select/select",
+    "pages/changePwd/changePwd",
+    "pages/recharge/recharge",
+    "pages/preview/preview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "广外学生代办平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#7e8ef0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/img/home.png",
+        "selectedIconPath": "/img/home.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "发布",
+        "iconPath": "/img/add.png",
+        "selectedIconPath": "/img/add.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/img/user.png",
+        "selectedIconPath": "/img/user.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

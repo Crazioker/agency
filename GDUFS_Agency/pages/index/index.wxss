@@ -1,0 +1,123 @@
+/**index.wxss**/
+.swiper {
+  height: 30%;
+  width: 100%;
+}
+
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.link{
+  margin-top: 10rpx;
+  height: 3rpx;
+  width: 90%;
+  background-color: grey;
+  margin-left: 5%;
+}
+.layout_horizontal {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.layout_horizontal .layout_horizontal_vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout_horizontal .layout_horizontal_vertical text{
+ margin-top:20rpx;
+}
+
+.layout_horizontal view{
+  text-align: center;
+}
+
+ .img{
+   /* margin: 20px; */
+   position: relative;
+   top: 20rpx;
+  height: 70rpx;
+  width: 70rpx;
+} 
+
+.layout_horizontal view text {
+    font-size: 24rpx;
+}
+
+.layout_horizontal view text {
+  font-size: 24rpx;
+}
+
+.title {
+  height: 60rpx;
+  font-size: 40rpx;
+  margin-top: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.layout_horizontal  .class-div{
+  margin: 1rpx;
+  height: 100rpx
+}
+.layout_horizontal  .class-div image{
+  margin: 0 auto;
+}
+.goods-card {
+  width: 95%;
+  height: 290rpx;
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.my_latest_order{
+  background-color:white;
+  margin: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.my_latest_order view{
+  margin: 10rpx;
+  font-size: 25rpx;
+}
+.my_latest_order .detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout_vertical{
+   background-color:white;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout_vertical .order_item{
+  background-color: rgb(227, 236, 245);
+  border-radius: 5rpx;
+  margin: 20rpx;
+}
+.layout_vertical .order_item view{
+  font-size: 30rpx;
+  margin: 10rpx;
+}
+.layout_vertical .order_item .item_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout_vertical .order_item .item_container .left{
+  width: 50%;
+}

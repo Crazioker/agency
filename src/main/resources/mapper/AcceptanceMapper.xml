@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdufs.agency.dao.AcceptanceMapper" >
+  <resultMap id="BaseResultMap" type="gdufs.agency.entity.Acceptance" >
+    <id column="acceptId" property="acceptid" jdbcType="VARCHAR" />
+    <id column="indentId" property="indentid" jdbcType="INTEGER" />
+    <result column="acceptedTime" property="acceptedtime" jdbcType="VARCHAR" />
+    <result column="finishedTime" property="finishedtime" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    acceptId, indentId, acceptedTime, finishedTime, state
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="gdufs.agency.entity.AcceptanceKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from Acceptance
+    where acceptId = #{acceptid,jdbcType=VARCHAR}
+      and indentId = #{indentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="gdufs.agency.entity.AcceptanceKey" >
+    delete from Acceptance
+    where acceptId = #{acceptid,jdbcType=VARCHAR}
+      and indentId = #{indentid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdufs.agency.entity.Acceptance" >
+    insert into Acceptance (acceptId, indentId, acceptedTime, 
+      finishedTime, state)
+    values (#{acceptid,jdbcType=VARCHAR}, #{indentid,jdbcType=INTEGER}, #{acceptedtime,jdbcType=VARCHAR}, 
+      #{finishedtime,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="gdufs.agency.entity.Acceptance" >
+    insert into Acceptance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="acceptid != null" >
+        acceptId,
+      </if>
+      <if test="indentid != null" >
+        indentId,
+      </if>
+      <if test="acceptedtime != null" >
+        acceptedTime,
+      </if>
+      <if test="finishedtime != null" >
+        finishedTime,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="acceptid != null" >
+        #{acceptid,jdbcType=VARCHAR},
+      </if>
+      <if test="indentid != null" >
+        #{indentid,jdbcType=INTEGER},
+      </if>
+      <if test="acceptedtime != null" >
+        #{acceptedtime,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedtime != null" >
+        #{finishedtime,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.Acceptance" >
+    update Acceptance
+    <set >
+      <if test="acceptedtime != null" >
+        acceptedTime = #{acceptedtime,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedtime != null" >
+        finishedTime = #{finishedtime,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where acceptId = #{acceptid,jdbcType=VARCHAR}
+      and indentId = #{indentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.Acceptance" >
+    update Acceptance
+    set acceptedTime = #{acceptedtime,jdbcType=VARCHAR},
+      finishedTime = #{finishedtime,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER}
+    where acceptId = #{acceptid,jdbcType=VARCHAR}
+      and indentId = #{indentid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectByIndetId" resultType="gdufs.agency.entity.Acceptance" parameterType="java.lang.Integer" >
+    select *
+    from Acceptance
+    where indentId = #{indentId,jdbcType=INTEGER}
+  </select>
+  
+    <select id="selectByAcceptId" resultType="gdufs.agency.entity.Acceptance" parameterType="java.lang.String" >
+    select *
+    from Acceptance
+    where acceptId = #{acceptId,jdbcType=VARCHAR}
+  </select>
+</mapper>

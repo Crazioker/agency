@@ -1,0 +1,80 @@
+/* pages/classInfo/classInfo.wxss */
+.goods-card {
+  width: 95%;
+  height: 290rpx;
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.goods-card .user-img {
+  height: 70rpx;
+  width: 70rpx;
+  position: relative;
+  left: 25rpx;
+  top: 25rpx;
+}
+
+.goods-card .goods-title {
+  position: relative;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.goods-card .goods-time {
+  position: relative;
+  left: 20rpx;
+  font-size: 24rpx;
+}
+
+.goods-card .goods-price {
+  position: relative;
+  top: 20rpx;
+  right: 20rpx;
+  float: right;
+  color: red;
+}
+.goods-card .orderDetail{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.goods-card .orderDetail text{
+  font-size: 30rpx;
+  padding: 10rpx;
+}
+
+.box {
+  width: 100%;
+  height: 100rpx;
+}
+
+.box1 {
+  height: 100%;
+  float: left;
+  width: 15%;
+  /* background-color: red */
+}
+
+.box2 {
+  float: right;
+  height: 50%;
+  width: 85%;
+  /* background-color: blue; */
+}
+
+.box3 {
+  float: left;
+  width: 85%;
+  height: 50%;
+  /* background-color: yellow; */
+}
+
+.tips{
+  margin-top: 20%;
+  display: flex;
+  text-align: center;
+ align-items: center;
+ justify-content: center;
+}

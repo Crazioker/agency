@@ -1,0 +1,92 @@
+<view class="page">
+  <!--导航条-->  
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>
+  <!--已发布-->
+  <view hidden="{{currentTab!==0}}">  
+    <view class="page__bd">
+      <view wx:for="{{agentOrders}}">  
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">付款金额</view>
+                <view class="weui-form-preview__value_in-hd">¥{{item.price}}</view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">代办类型</view>
+                    <view class="weui-form-preview__value">{{typeArray[item.type]['type']}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">代办状态</view>
+                    <view class="weui-form-preview__value">{{stateArray[item.state]['state']}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">详情</view>
+                    <view class="weui-form-preview__value">{{item.description}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">收货地点</view>
+                    <view class="weui-form-preview__value">{{item.address}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">送达时间</view>
+                    <view class="weui-form-preview__value">{{item.plantime}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft" wx:if="{{stateArray[item.state]['state']=='未接单'}}">
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"  bindtap="cancelAgentOrder" data-indentid="{{item.indentid}}" data-price="{{item.price}}">取消</navigator>
+            </view>
+            <view class="weui-form-preview__ft" wx:if="{{stateArray[item.state]['state']=='进行中'}}">
+                <!-- <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="cancelAgentOrderHasAccepted" data-indentid="{{item.indentid}}" data-acceptid="{{item.acceptid}}" data-price="{{item.price}}">取消</navigator> -->
+                <navigator  url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" data-indentid="{{item.indentid}}" data-acceptid="{{item.acceptid}}" bindtap="updateIntentAccepted" data-price="{{item.price}}" data-status="{{item.state}}" >确认送达</navigator>
+            </view>
+            <view class="weui-form-preview__ft" wx:if="{{stateArray[item.state]['state']=='已完成'}}">
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="delAgentOrder" data-indentid="{{item.indentid}}"></navigator>
+            </view>
+        </view>
+      </view>  
+    </view>
+  </view>
+  <!--已接取-->
+  <view hidden="{{currentTab!==1}}">
+    <view class="page__bd">
+      <view wx:for="{{accessOrders}}">  
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">付款金额</view>
+                <view class="weui-form-preview__value_in-hd">¥{{item.price}}</view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">代办类型</view>
+                    <view class="weui-form-preview__value">{{typeArray[item.type]['type']}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">代办状态</view>
+                    <view class="weui-form-preview__value">{{acceptStateArray[item.state]['state']}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">详情</view>
+                    <view class="weui-form-preview__value">{{item.description}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">收货地点</view>
+                    <view class="weui-form-preview__value">{{item.address}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">送达时间</view>
+                    <view class="weui-form-preview__value">{{item.plantime}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft" wx:if="{{acceptStateArray[item.state]['state']=='进行中'}}">
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="cancelAgentOrderHasAccepted" data-indentid="{{item.indentid}}" data-acceptid="{{item.acceptid}}">取消</navigator>
+            </view>
+            <view class="weui-form-preview__ft" wx:if="{{acceptStateArray[item.state]['state']=='已完成'}}">
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" ></navigator>
+            </view>
+        </view>
+      </view>  
+    </view>
+  </view>  
+</view>

@@ -1,0 +1,14 @@
+/* pages/info/info.wxss */
+/* pages/classInfo/classInfo.wxss */
+page,
+.page{height:100%;}
+.saveBtn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35px;
+  color: #fff;
+  background-color:#7e8ef0;
+  border: 0.1rpx solid #ccc;
+  border-radius: 40rpx;
+}

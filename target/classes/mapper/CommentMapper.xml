@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdufs.agency.dao.CommentMapper" >
+  <resultMap id="BaseResultMap" type="gdufs.agency.entity.Comment" >
+    <id column="commentId" property="commentid" jdbcType="INTEGER" />
+    <result column="publishId" property="publishid" jdbcType="VARCHAR" />
+    <result column="acceptId" property="acceptid" jdbcType="VARCHAR" />
+    <result column="indentId" property="indentid" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    commentId, publishId, acceptId, indentId, content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from Comment
+    where commentId = #{commentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from Comment
+    where commentId = #{commentid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdufs.agency.entity.Comment" >
+    insert into Comment (commentId, publishId, acceptId, 
+      indentId, content)
+    values (#{commentid,jdbcType=INTEGER}, #{publishid,jdbcType=VARCHAR}, #{acceptid,jdbcType=VARCHAR}, 
+      #{indentid,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="gdufs.agency.entity.Comment" >
+    insert into Comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentid != null" >
+        commentId,
+      </if>
+      <if test="publishid != null" >
+        publishId,
+      </if>
+      <if test="acceptid != null" >
+        acceptId,
+      </if>
+      <if test="indentid != null" >
+        indentId,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentid != null" >
+        #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="publishid != null" >
+        #{publishid,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptid != null" >
+        #{acceptid,jdbcType=VARCHAR},
+      </if>
+      <if test="indentid != null" >
+        #{indentid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.Comment" >
+    update Comment
+    <set >
+      <if test="publishid != null" >
+        publishId = #{publishid,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptid != null" >
+        acceptId = #{acceptid,jdbcType=VARCHAR},
+      </if>
+      <if test="indentid != null" >
+        indentId = #{indentid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where commentId = #{commentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.Comment" >
+    update Comment
+    set publishId = #{publishid,jdbcType=VARCHAR},
+      acceptId = #{acceptid,jdbcType=VARCHAR},
+      indentId = #{indentid,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR}
+    where commentId = #{commentid,jdbcType=INTEGER}
+  </update>
+  <select id="getCommentsByIndentId" resultType="gdufs.agency.entity.Comment" parameterType="java.lang.Integer" >
+    select * 
+    from Comment
+    where indentId = #{indentId,jdbcType=INTEGER}
+  </select>
+</mapper>

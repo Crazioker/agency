@@ -1,0 +1,34 @@
+<!--pages/publish/publish.wxml-->
+<view class="root" >
+  <view class="secondRoot">
+    <Select prop-array='{{selectArray}}' bind:myget='getData' class='selectView'></Select>
+
+    <text class="txtContent">请输入{{text}}</text>
+
+    <textarea class="content" bindinput="getDescription"></textarea>
+
+    <text class="txtContent">请输入收货地点</text>
+
+    <textarea class="content" bindinput="getAddress"></textarea>
+
+    <view class="payRoot">
+      <text>您愿意支付</text>
+    
+      <input type="number" class="price" bindinput="getPrice" value="{{price == 0 ? '' : price}}"></input>
+      
+      <text decode="true">&nbsp;&nbsp;元，作为服务费\n</text>
+    </view>
+
+    <view class="timeRoot">
+      <text class="txtTime">请选择送达时间</text>
+
+      <picker mode="multiSelector" value="{{multiIndex}}" bindcolumnchange="bindTimeColumnChange" bindchange="bindTimeChange" range="{{multiArray}}" bindtap='pickerTap' style="border-radius:10px">
+        <view class="picker">
+          {{time}}
+        </view>
+      </picker>
+    </view>
+    
+    <button class="publishButton" bindtap="publish">支付并发布</button>
+  </view>
+</view>

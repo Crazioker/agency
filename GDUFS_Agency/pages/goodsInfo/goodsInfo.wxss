@@ -1,0 +1,155 @@
+/* pages/goodsInfo/goodsInfo.wxss */
+/* page{
+  text-align: center
+} */
+
+.orderDetail{
+  margin-top: 20rpx;
+  width: 100%;
+  vertical-align:text-top;
+}
+.orderDetail .detailItem{
+  text-align: left;
+  line-height: 2em;
+}
+
+.link{
+  height: 5rpx;
+  background-color: #ECECEC;
+  width: 95%;
+  position: relative;
+  left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.goods{
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.goods .user-info{
+  width: 100%;
+  height: 70rpx;
+}
+.goods .user-info .user-img{
+  float: left;
+  width: 70rpx;
+  height: 100%;
+  /* background-color: yellow; */
+}
+.goods .user-info .user-name{
+  float: left;
+  height: 50%;
+  width: 50%;
+  /* background-color: red; */
+   font-size: 30rpx; 
+   padding-left: 10rpx;
+}
+.goods .user-info .user-date{
+  float: left;
+  height: 50%;
+  width: 50%;
+  font-size: 20rpx;
+  padding: 10rpx;
+  /* background-color: blue; */
+
+}
+.goods .user-info .takeOrder{
+  margin-right: 10rpx;
+  width: 20%;
+  height: 80%;
+  font-size: 25rpx;
+  color: white;
+  background-color: #7e8ef0;
+}
+.orderDescription{
+   background-color: white;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding-left:20rpx;
+}
+.goods .goods-img {
+   display: flex;
+   flex-direction:column;  
+   text-align: center
+}
+.goods .goods-img image{
+  margin-left:auto;
+  margin-right: auto; 
+  margin-bottom: 40rpx; 
+}
+
+.footer{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: white;
+  height: 90rpx;
+  border-top: solid 1rpx gray;
+}
+.footer .left{
+  float: left;
+  margin: 10rpx;
+}
+.footer .left .img{
+  /* margin-top: 10rpx; */
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.commentsInput{
+  margin-top: 13rpx;
+  margin-left: 70rpx;
+  width: 500rpx;
+}
+.footer .left text{
+  font-size: 30rpx;
+}
+.footer .right{
+  float: right;
+  margin: 10rpx;
+  margin-right: 20rpx;
+}
+.footer .right button{
+  height: 70rpx;
+   color: white;
+  background-color: #7e8ef0;
+  font-size: 30rpx;
+}
+
+.comments{
+  background-color: white;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom:120rpx;
+}
+.comments .comments-info{
+  margin: 20rpx;
+}
+.liuyan{
+  padding-left:20rpx;
+}
+
+.comments .comments-info .user-img{
+  width: 70rpx;
+  height: 70rpx;
+  float: left;
+  margin-top:15rpx;
+}
+.comments .comments-info .user-name{
+  font-size: 30rpx;
+  padding-left:10rpx;
+}
+.comments .comments-info .comments-data{
+  float: right; 
+  margin-right: 20rpx;
+  font-size: 24rpx;
+}
+
+.comments .comments-info .user-comments-content{
+  font-family: Arial,Verdana,Sans-serif;
+  padding-left:10rpx;
+}

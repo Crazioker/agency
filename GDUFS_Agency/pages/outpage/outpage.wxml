@@ -1,0 +1,3 @@
+<!--pages/outpage/outpage.wxml-->
+<text>pages/outpage/outpage.wxml</text>
+<web-view src="{{currentUrl}}"></web-view>

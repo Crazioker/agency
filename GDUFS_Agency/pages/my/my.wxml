@@ -1,0 +1,52 @@
+<view class='title-card'>
+  <view>
+    <image class='touxiang' src="/img/timg.jpg"></image>
+    <view>
+      <text>{{username}}</text>
+    </view>
+        <view bindtap="goToRecharge">
+      <text>余额：{{balance}}元</text>
+    </view>
+  </view>
+  <!-- <view wx:else="{{isUser}}">
+   <button class='button'  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"><text>登陆</text></button>  
+  </view> -->
+</view>
+
+
+<view class='box'>
+  <view class='box-span' style='flex:1' bindtap="goToPreview">
+    <text class='left'>个人记录</text>
+    <view class='right'>
+      <!-- <text>{{userInfoForSql.goodsNum}}</text> -->
+      <image src='/img/enter.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='box2'>
+  <view class='box-span' style='flex:1' bindtap="userInformation">
+    <text class='left'>修改个人信息</text>
+    <view class='right'>
+      <image src='/img/enter.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='box2'>
+  <view class='box-span' style='flex:1' bindtap="changepassword">
+    <text class='left'>修改密码</text>
+    <view class='right'>
+      <image src='/img/enter.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='box2'>
+  <view class='box-span' style='flex:1' bindtap="logout">
+    <text class='left'>退出登录</text>
+    <view class='right'>
+      <image src='/img/enter.png'></image>
+    </view>
+  </view>
+</view>

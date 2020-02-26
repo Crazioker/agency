@@ -1,0 +1,74 @@
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" current="{{current}}" bindchange="onslideChange" circular="true">    
+  <block wx:for="{{imgUrls}}" wx:for-index="index">    
+    <swiper-item>
+     <image bindtap="swiperInavigateTo" src="{{item.img}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>
+</swiper> 
+
+<view class='layout_horizontal'>
+  <view style='flex:1'>
+  <navigator url='/pages/classInfo/classInfo?type={{classId.purchase}}'>
+  <view class='layout_horizontal_vertical'>
+     <image class='img' src='/img/phone.png'></image> 
+     <text>代购</text>
+  </view>
+  </navigator>
+  </view>
+  <view style='flex:1;'>
+  <navigator url='/pages/classInfo/classInfo?type={{classId.express}}'>
+  <view class='layout_horizontal_vertical'>
+     <image class='img' src='/img/deliverly.png'></image>
+     <text>代拿快递</text>
+  </view>
+  </navigator>
+  </view>
+  <view style='flex:1;'>
+  <navigator url='/pages/classInfo/classInfo?type={{classId.other}}'>
+  <view class='layout_horizontal_vertical'>
+     <image class='img' src='/img/computer.png'></image>
+     <text>其他代办</text>
+  </view>
+  </navigator> 
+  </view>
+  <view style='flex:1'>
+    <view class='layout_horizontal_vertical'>
+     <image class='img' src='/img/more.png'></image>
+      <text>更多</text> 
+    </view>
+  </view>   
+</view>
+
+<!-- <view class="my_latest_order">
+  <view>我的最新订单消息</view>
+  <view class="detail">
+    <view>myLatestOrder.typr</view>
+    <view>myLatestOrder.state</view>
+  </view>
+</view> -->
+
+<view class="link"></view>
+
+<view class="title">
+ <text>代办订单主场区</text>
+</view>
+<view class="layout_vertical">
+   <!-- <scroll-view scroll-y="true" style="height:100%"> -->
+     <view wx:for="{{agentOrders}}" >
+        <navigator 
+          url='/pages/goodsInfo/goodsInfo?id={{item.indentid}} ' hover-class="navigator-hover">
+           <view class="order_item">
+               <view class="item_container">
+                 <view class="left">{{typeArray[item.type]['type']}}:\t{{item.description}}</view>
+                 <view class="right">￥{{item.price}}</view>
+               </view>
+               <view class="item_container">
+                 <view class="left">{{item.address}}</view>
+                 <view class="right">{{item.plantime}}</view>
+               </view>
+           </view>
+        </navigator>
+       </view>  
+   <!-- </scroll-view> -->
+</view>
+
