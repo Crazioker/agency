@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.9</version><!-- 也可以用把值写到properties中，与springVersion一样 -->
+			<version>4.13.1</version><!-- 也可以用把值写到properties中，与springVersion一样 -->
 			<scope>test</scope>
 		</dependency>
 		<dependency>
